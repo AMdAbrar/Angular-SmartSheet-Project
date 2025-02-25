@@ -1,103 +1,103 @@
 
   <!-- Top Bar -->
   <div class="bg-primary text-white px-4 py-2">
-      <div class="container">
-          <div class="top-bar">
-              <div class="social-icons">
-                  <a href="https://www.linkedin.com/company/consero" target="_blank" class="hover-opacity-80"><i class="fab fa-linkedin"></i></a>
-                  <a href="https://www.youtube.com/@conseroglobal5944" target="_blank" class="hover-opacity-80"><i class="fab fa-youtube"></i></a>
-                  <a href="https://www.facebook.com/conseroglobal/" target="_blank" class="hover-opacity-80"><i class="fab fa-facebook"></i></a>
-                  <a href="https://x.com/conseroglobal" target="_blank" class="hover-opacity-80"><i class="fab fa-twitter"></i></a>
-              </div>
-              <div class="contact-info">
-                  <!-- <a href="tel:866.588.0495" class="hover-opacity-80">
-                      <i class="fas fa-phone"></i>
-                      866.588.0495
+    <div class="container">
+        <div class="top-bar">
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/consero" target="_blank" class="hover-opacity-80"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/@conseroglobal5944" target="_blank" class="hover-opacity-80"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.facebook.com/conseroglobal/" target="_blank" class="hover-opacity-80"><i class="fab fa-facebook"></i></a>
+                <a href="https://x.com/conseroglobal" target="_blank" class="hover-opacity-80"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="contact-info">
+                <!-- <a href="tel:866.588.0495" class="hover-opacity-80">
+                    <i class="fas fa-phone"></i>
+                    866.588.0495
+                </a> -->
+                <!-- //report and help buttons// -->
+                <a class="nav-button" href="https://conseroglobal.sharepoint.com/sites/DForm/_layouts/15/listforms.aspx?cid=YjI2Yjc0OWQtOWJhYy00ZTcxLWIyNDMtNDg0MzJjY2I4MmEx&nav=YWIyNGUyODctYTRjMC00OGU0LTkwZGItYWIyOTA1ODBjOGNl" target="_blank">
+                  <span class="icon">⚠️</span>
+                  Report Issue
+                </a>
+              <button class="nav-button" id="helpButton" (click)="toggleDropdown()">
+                  <span class="icon">❔</span>
+                  Help
+              </button>
+              <div class="dropdown-content" *ngIf="isDropdownVisible" id="helpDropdown">
+                  <a href="#" class="dropdown-item">
+                      <span class="icon">❔</span>
+                      Help and Learning
+                  </a>
+                  <a href="#" class="dropdown-item">
+                      <span class="icon">💡</span>
+                      Show Help Tips
+                  </a>
+                  <!-- <a href="#" class="dropdown-item">
+                      <span class="icon">🎧</span>
+                      Contact Us
                   </a> -->
-                  <!-- //report and help buttons// -->
-                  <a class="nav-button" href="https://conseroglobal.sharepoint.com/sites/DForm/_layouts/15/listforms.aspx?cid=YjI2Yjc0OWQtOWJhYy00ZTcxLWIyNDMtNDg0MzJjY2I4MmEx&nav=YWIyNGUyODctYTRjMC00OGU0LTkwZGItYWIyOTA1ODBjOGNl" target="_blank">
-                    <span class="icon">⚠️</span>
-                    Report Abuse
-                  </a>
-                <button class="nav-button" id="helpButton" (click)="toggleDropdown()">
-                    <span class="icon">❔</span>
-                    Help
-                </button>
-                <div class="dropdown-content" *ngIf="isDropdownVisible" id="helpDropdown">
-                    <a href="#" class="dropdown-item">
-                        <span class="icon">❔</span>
-                        Help and Learning
-                    </a>
-                    <a href="#" class="dropdown-item">
-                        <span class="icon">💡</span>
-                        Show Help Tips
-                    </a>
-                    <!-- <a href="#" class="dropdown-item">
-                        <span class="icon">🎧</span>
-                        Contact Us
-                    </a> -->
+              </div>
+                <div class="nav-right">
+                    <ul class="loginout">
+                        <!-- Show Login or Logout based on the user's login status -->
+                        <a *ngIf="!isLoggedIn"  (click)="toggleLoginLogout()">Login</a>
+                        <a *ngIf="isLoggedIn" (click)="toggleLoginLogout()">Logout</a>
+                    </ul>
                 </div>
-                  <div class="nav-right">
-                      <ul class="loginout">
-                          <!-- Show Login or Logout based on the user's login status -->
-                          <a *ngIf="!isLoggedIn"  (click)="toggleLoginLogout()">Login</a>
-                          <a *ngIf="isLoggedIn" (click)="toggleLoginLogout()">Logout</a>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <!-- Main Navigation -->
-  <header class="border-b" style="font-weight: 500;">
-      <div class="nav-container">
-          <nav class="main-nav">
-              <img src="https://conseroglobal.com/wp-content/uploads/2020/11/Consero_Logo_dark.svg" class="logo">
-              <div class="nav-links">
-                  <a href="/page"  (click)="preventLogout()">Home</a>
-                  <!-- Internet -->
-                  <div  class="nav-item">
-                      <div *ngIf="isLoggedIn" class="nav-item">
-                          <a href="#" (click)="preventLogout()">Useful Links</a>
-                      </div>
-                      <div  class="services-panel">
-                          <div class="panel-content">
-                              <div class="service-column">
-                                <app-home></app-home>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- Apps -->
-                  <div  class="nav-item">
-                      <div *ngIf="isLoggedIn"  class="nav-item">
-                          <a href="#" (click)="preventLogout()">Apps</a>
-                      </div>
-                      <div  class="services-panel">
-                          <div class="panel-content">
-                              <div class="service-column">
-                                 <app-app></app-app>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- About Us -->
-                  <div class="nav-item">
-                      <div  class="nav-item">
-                          <a href="#" (click)="preventLogout()">About Us</a>
-                      </div>
-                      <div  class="services-panel">
-                          <div class="panel-content">
-                              <div class="service-column">
-                                  <app-about-page></app-about-page>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <a href="https://conseroglobal.sharepoint.com/sites/ContactWithUs/_layouts/15/listforms.aspx?cid=Nzc2ZTEwMjktMmRjNS00MDBkLWEwODctMGE3MjQ1OTRlOWEz&nav=OTkwZDg3YTctOTM0ZS00YmE5LWFkYjktM2ZiNmU1MjUxNDll" target="_blank" class="connect-btn">
-                      Connect With Us
-                  </a>
-              </div>
-          </nav>
-      </div> 
-  </header>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main Navigation -->
+<header class="border-b" style="font-weight: 500;">
+    <div class="nav-container">
+        <nav class="main-nav">
+            <img src="https://conseroglobal.com/wp-content/uploads/2020/11/Consero_Logo_dark.svg" class="logo">
+            <div class="nav-links">
+                <a href="/page"  (click)="preventLogout()">Home</a>
+                <!-- Internet -->
+                <div  class="nav-item">
+                    <div *ngIf="isLoggedIn" class="nav-item">
+                        <a href="#" (click)="preventLogout()">Useful Links</a>
+                    </div>
+                    <div  class="services-panel">
+                        <div class="panel-content">
+                            <div class="service-column">
+                              <app-home></app-home>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Apps -->
+                <div  class="nav-item">
+                    <div *ngIf="isLoggedIn"  class="nav-item">
+                        <a href="#" (click)="preventLogout()">Apps</a>
+                    </div>
+                    <div  class="services-panel">
+                        <div class="panel-content">
+                            <div class="service-column">
+                               <app-app></app-app>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- About Us -->
+                <div class="nav-item">
+                    <div  class="nav-item">
+                        <a href="#" (click)="preventLogout()">About Us</a>
+                    </div>
+                    <div  class="services-panel">
+                        <div class="panel-content">
+                            <div class="service-column">
+                                <app-about-page></app-about-page>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://conseroglobal.sharepoint.com/sites/ContactWithUs/_layouts/15/listforms.aspx?cid=Nzc2ZTEwMjktMmRjNS00MDBkLWEwODctMGE3MjQ1OTRlOWEz&nav=OTkwZDg3YTctOTM0ZS00YmE5LWFkYjktM2ZiNmU1MjUxNDll" target="_blank" class="connect-btn">
+                    Connect With Us
+                </a>
+            </div>
+        </nav>
+    </div> 
+</header>

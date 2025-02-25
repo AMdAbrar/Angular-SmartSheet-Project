@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Service/auth.service';
+// import { LoginService } from 'src/app/Service/login.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,6 +19,8 @@ export class LoginComponent  implements OnInit, OnDestroy{
   sendAuthenticationCode() {
     alert('Authentication code sent to your email!');
   }
+  botEmail: string = 'abrar@conseroglobal.com';
+  botPassword: string = 'abrara';
   showEmailForm = false;
   email: string = '';
   password: string = '';
@@ -46,52 +49,50 @@ export class LoginComponent  implements OnInit, OnDestroy{
       this.authStatusSub.unsubscribe(); // Unsubscribe when the component is destroyed
     }
   }
- // Method to handle login with email and password
-//  loginWithEmail(): void {
-//   if (this.email && this.password) {
-//     // Assuming login logic (e.g., check credentials with a service or mock)
-//     this.authService.login();  // Set the user as logged in
-//     this.loginSuccess = true;   // Show success message
-    
-//     // You can add logic to check the validity of the email and password here
-//     // For now, we're just simulating a successful login
-//   } else {
-//     this.loginSuccess = false;
-//     // Handle error or invalid credentials if needed
-//   }
-// }
   navigateToWelcome() {
     // Implement navigation logic
     console.log('Navigating to Welcome Page...');
   }
 
   validateEmail() {
-    // this.emailTouched = true;
-    // const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    // this.isEmailValid = emailRegex.test(this.email);
+    this.emailTouched = true;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    this.isEmailValid = emailRegex.test(this.email);
   }
 
   validatePassword() {
-    // this.passwordTouched = true;
-    // this.isPasswordValid = this.password.length > 5;
+    this.passwordTouched = true;
+
+    this.isPasswordValid = this.password.length > 5;
   }
   loginWithEmail(): void {
-    this.validateEmail();
-    this.validatePassword();
-    
-    if (this.isEmailValid && this.isPasswordValid) {
+    // Mock user data: List of valid users
+    const mockUsers = [
+      { email: 'ravi@conseroglobal.com', password: '123456' },
+      { email: 'manny@conseroglobal.com', password: '123456' },
+      { email: 'nataraj@conseroglobal.com', password: '123456' },
+      { email: 'abrar@conseroglobal.com', password: '123456' },
+      { email: 'shashank@conseroglobal.com', password: '123456' },
+      { email: 'varun@conseroglobal.com', password: '123456' }
+    ];
+  
+    // Check if entered credentials match any user in the list
+    const validUser = mockUsers.find(user => user.email === this.email && user.password === this.password);
+  
+    if (validUser) {
       console.log('Login successful!');
-      this.loginSuccess = true;
-      // Simulate redirect to the welcome page after a delay
-      setTimeout(() => {
-        this.loginSuccess = false; // Hide the success message
-        this.authService.login(); // Update login state in AuthService
-        this.isLoggedIn = true; // Set local state to reflect logged-in status
-        this.router.navigate(['/page']); // Navigate to the welcome page
-      }, 20);
+  
+      // Store user data in localStorage (or sessionStorage)
+      localStorage.setItem('user', JSON.stringify({ email: this.email, loggedIn: true }));
+  
+      // Mock auth service method
+      this.authService.login();
+  
+      // Navigate to another page
+      this.router.navigate(['/page']);
     } else {
-      console.log('Login failed. Please fix the errors.');
-      this.loginSuccess = false;
+      console.error('Login failed: Invalid credentials');
+      alert('Login failed: Invalid email or password');
     }
   }
 
