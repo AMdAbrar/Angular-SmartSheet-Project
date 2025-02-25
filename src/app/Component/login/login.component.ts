@@ -72,7 +72,7 @@ export class LoginComponent  implements OnInit, OnDestroy{
       { email: 'manny@conseroglobal.com', password: '123456' },
       { email: 'nataraj@conseroglobal.com', password: '123456' },
       { email: 'abrar@conseroglobal.com', password: '123456' },//abrar
-      { email: 'shashank@conseroglobal.com', password: '123456' },
+      { email: 'shashank@conseroglobal.com', password: '123456' },//shashank
       { email: 'varun@conseroglobal.com', password: '123456' }//varun
     ];
   
