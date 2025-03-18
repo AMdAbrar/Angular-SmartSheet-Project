@@ -24,7 +24,7 @@
                   Help
               </button>
               <div class="dropdown-content" *ngIf="isDropdownVisible" id="helpDropdown">
-                  <a href="#" class="dropdown-item">
+                  <a href="/help" class="dropdown-item">
                       <span class="icon">❔</span>
                       Help and Learning
                   </a>
@@ -48,6 +48,13 @@
         </div>
     </div>
 </div>
+<div class="news-ticker">
+    <p>
+      🗞️ <a href="https://conseroglobal.com/about/press/">Breaking: New feature released!</a> &nbsp; | &nbsp;
+      📢 <a href="https://conseroglobal.com/press/ai-brave-new-world/?hsCtaAttrib=183563625069">Big update coming soon!</a> &nbsp; | &nbsp;
+      🌍 <a href="https://conseroglobal.com/news/">Global tech news updates</a>
+    </p>
+  </div>
 <!-- Main Navigation -->
 <header class="border-b" style="font-weight: 500;">
     <div class="nav-container">
@@ -63,7 +70,8 @@
                     <div  class="services-panel">
                         <div class="panel-content">
                             <div class="service-column">
-                              <app-home></app-home>
+                              <!-- <app-home></app-home> -->
+                               <app-usefull-links></app-usefull-links>
                             </div>
                         </div>
                     </div>
@@ -76,7 +84,9 @@
                     <div  class="services-panel">
                         <div class="panel-content">
                             <div class="service-column">
-                               <app-app></app-app>
+                               <!-- <app-app></app-app> -->
+                                <app-apps></app-apps>
+                                 <!-- <app-example></app-example> -->
                             </div>
                         </div>
                     </div>
@@ -98,6 +108,8 @@
                     Connect With Us
                 </a>
             </div>
+            
         </nav>
     </div> 
+    
 </header>

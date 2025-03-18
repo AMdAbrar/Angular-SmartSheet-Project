@@ -11,6 +11,10 @@ import { AboutPageComponent } from './Component/about-page/about-page.component'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title //   document.addEventListener('contextmenu', this.disableRightClick);
+    (title: any) {
+      throw new Error('Method not implemented.');
+  }
 
 // used for view only option
   // implements OnInit, OnDestroy adds this to class name beside

@@ -73,9 +73,11 @@ export class LoginComponent  implements OnInit, OnDestroy{
       { email: 'nataraj@conseroglobal.com', password: '123456' },
       { email: 'abrar@conseroglobal.com', password: '123456' },//abrar
       { email: 'shashank@conseroglobal.com', password: '123456' },//shashank
-      { email: 'varun@conseroglobal.com', password: '123456' }//varun
+      { email: 'varun@conseroglobal.com', password: '123456' },//varun
+      { email: 'a', password: '1' }//varun
+
     ];
-  
+    
     // Check if entered credentials match any user in the list
     const validUser = mockUsers.find(user => user.email === this.email && user.password === this.password);
   

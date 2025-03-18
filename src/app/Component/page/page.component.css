@@ -1,4 +1,31 @@
 Base styles
+
+.news-ticker {
+  background: #ffcc00;
+  color: #000;
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-weight: bold;
+}
+
+.news-ticker p {
+  display: inline-block;
+  animation: scrollNews 25s linear infinite;
+}
+
+@keyframes scrollNews {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 :root {
     --primary: #006699;
     --secondary: #FF6634;

@@ -1,0 +1,264 @@
+/* General Styles */
+.flex {
+    display: flex;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+  .space-x-4 > * + * {
+    margin-left: 1rem;
+  }
+  .p-6 {
+    padding: 1.5rem;
+  }
+  
+  /* Primary Option Buttons */
+  .btn-primary {
+    padding: 12px 24px;
+    background-color: #1e3a8a;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  .btn-primary:hover {
+    background-color: #3b82f6;
+  }
+  
+  /* Cards */
+  .grid {
+    display: grid;
+  }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gap-6 {
+    gap: 1.5rem;
+  }
+  .card {
+    background: #007bff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    background: #e0f2fe;
+  }
+  .card.selected {
+    background: #60a5fa;
+    color: white;
+  }
+  .card-icon {
+    font-size: 32px;
+  }
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+/* Secondary Option Buttons */
+.btn-secondary {
+  padding: 10px 20px;
+  background-color: #007bff; /* Initial Blue */
+  color: white; /* Black Text */
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 2px solid #007bff; /* Border for better visibility */
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* On Hover */
+.btn-secondary:hover {
+  transform: translateY(-5px);
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+/* Active (Clicked) */
+.btn-secondary.active {
+  background-color: white !important;
+  color: black !important;
+  border: 2px solid black;
+}
+
+  
+  
+  /* Link Box */
+  .link-box {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f1f5f9;
+    border-radius: 8px;
+  }
+  .link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #1e3a8a;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .link:hover {
+    text-decoration: underline;
+  }
+/* General Styles */
+.flex {
+    display: flex;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+  .space-x-4 > * + * {
+    margin-left: 1rem;
+  }
+  .p-6 {
+    padding: 1.5rem;
+  }
+  
+  /* Primary Option Buttons */
+  .btn-primary {
+    padding: 12px 24px;
+    background-color: #1e3a8a;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  .btn-primary:hover {
+    background-color: #3b82f6;
+  }
+  
+  /* Cards */
+  .grid {
+    display: grid;
+  }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .gap-6 {
+    gap: 1.5rem;
+  }
+  .card {
+    background: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    background: #e0f2fe;
+    color: black;
+  }
+  .card.selected {
+    background: #007bff;
+    color: white;
+  }
+  .card-icon {
+    font-size: 32px;
+  }
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+
+  
+  /* Link Box */
+  .link-box {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f1f5f9;
+    border-radius: 8px;
+  }
+  .link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #1e3a8a;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .link:hover {
+    text-decoration: underline;
+  }
+  /* Link Box */
+.link-box {
+  margin-top: 12px;
+  padding: 10px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  width: 100%; /* Ensures it stays inside the card */
+}
+
+.link {
+  display: block;
+  margin-top: 8px;
+  color: #1e3a8a;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: #3b82f6;
+}
+.links-container a {
+  display: block; /* Ensures each link appears on a new line */
+  margin-bottom: 5px; /* Adds spacing between links */
+}
+
+.btn-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  position: absolute; /* Ensures it stays at the top-left */
+  top: 10px;
+  left: 500px;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-back:hover {
+  background: white;
+  color: black;
+}
+
+.btn-back .icon {
+  font-size: 18px;
+}
+

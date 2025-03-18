@@ -1,0 +1,73 @@
+<!-- Main Container -->
+<div class="container">
+    <div class="card-container">
+      <div *ngFor="let category of categories" class="card">
+        <div class="card-header">
+          <h2 class="text-xl">{{ category.name }}</h2>
+          <p class="text-gray-500">{{ category.description }}</p>
+        </div>
+  
+        <!-- Expanded view with tabs -->
+        <div *ngIf="expandedCards[category.id]" class="tabs-container">
+          <div class="tabs-header">
+            <button 
+              [class.active]="activeTab[category.id] === 'internet'"
+              (click)="setActiveTab(category.id, 'internet')" 
+              class="tab-button">
+              <i class="icon-globe"></i> Internet
+            </button>
+            <button 
+              [class.active]="activeTab[category.id] === 'gdrive'"
+              (click)="setActiveTab(category.id, 'gdrive')" 
+              class="tab-button">
+              <i class="icon-drive"></i> GDrive
+            </button>
+          </div>
+  
+          <!-- Internet Links -->
+          <div *ngIf="activeTab[category.id] === 'internet'" class="tab-content">
+            <ul  *ngIf="activeTab[category.id] === 'internet'">
+              <li *ngFor="let item of category.internet" class="tab-content-item">
+                <a href="#" class="link">
+                  <i class="icon-globe"></i>
+                  <span>{{ item }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+  
+          <!-- GDrive Links -->
+          <div *ngIf="activeTab[category.id] === 'gdrive'" class="tab-content">
+            <ul  *ngIf="activeTab[category.id] === 'gdrive'">
+              <li *ngFor="let item of category.gdrive" class="tab-content-item">
+                <a href="#" class="link">
+                  <i class="icon-drive"></i>
+                  <span>{{ item }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- Buttons to Expand -->
+        <div *ngIf="!expandedCards[category.id]" class="card-content">
+          <div class="buttons">
+            <button class="button-internet" (click)="toggleCard(category.id, 'internet')">
+              <i class="icon-globe"></i> Internet
+            </button>
+            <button class="button-gdrive" (click)="toggleCard(category.id, 'gdrive')">
+              <i class="icon-drive"></i> GDrive
+            </button>
+          </div>
+        </div>
+  
+        <!-- Close Button -->
+        <div *ngIf="expandedCards[category.id]" class="card-footer">
+          <button class="close-button" (click)="expandedCards[category.id] = false">
+            <span>Close</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

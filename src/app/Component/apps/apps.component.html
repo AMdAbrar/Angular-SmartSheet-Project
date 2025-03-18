@@ -1,0 +1,63 @@
+   <!-- Back Button (Top Left) -->
+   <button *ngIf="selectedOption" (click)="goBack()" class="btn-back" >
+    <i class="fas fa-arrow-left"></i> Back
+  </button>
+<div class="container">
+  <!-- Sidebar for Options -->
+  <aside class="sidebar">
+    <!-- <h3>Select Option</h3> -->
+    <ul>
+      <li *ngFor="let option of options" 
+          (click)="selectOption(option)" 
+          [class.active]="selectedOption === option">
+        {{ option }}
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="content">
+ 
+
+    <h2 *ngIf="selectedOption">{{ selectedOption }}</h2>
+
+    <!-- Tab Navigation -->
+    <div class="tab-container" *ngIf="selectedOption">
+      <button class="tab" 
+              (click)="selectedSubOption = 'internet'" 
+              [class.active]="selectedSubOption === 'internet'">
+        🌍 Internet
+      </button>
+      <button class="tab" 
+              (click)="selectedSubOption = 'gdrive'" 
+              [class.active]="selectedSubOption === 'gdrive'">
+        📂 GDrive
+      </button>
+    </div>
+
+   <!-- Internet Links -->
+<div *ngIf="selectedSubOption === 'internet' && selectedOption">
+  <h2>🌐 Internet Links</h2>
+  <div class="links">
+    <ul>
+      <li *ngFor="let link of links[selectedOption]?.internet">
+        <a [href]="link.url" target="_blank">{{ link.name }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Google Drive Links -->
+<div *ngIf="selectedSubOption === 'gdrive' && selectedOption">
+  <h2>📁 Google Drive Links</h2>
+  <div class="links">
+    <ul>
+      <li *ngFor="let link of links[selectedOption]?.gdrive">
+        <a [href]="link.url" target="_blank">{{ link.name }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+  </div>
+</div>

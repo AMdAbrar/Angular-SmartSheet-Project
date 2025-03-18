@@ -1,0 +1,57 @@
+<div class="flex flex-col items-center space-y-6 p-6">
+
+  <!-- Step 2: Show Cards for 7 Options -->
+  <div *ngIf="!selectedOption" class="grid grid-cols-3 gap-6">
+    <ng-container *ngFor="let option of options">
+      <div (click)="selectOption(option)" class="relative flex flex-col items-center card">
+        <!-- <div class="card-icon">📌</div> -->
+        <p class="card-title">{{ option }}</p>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Step 3: Show Details When Option is Selected -->
+  <div *ngIf="selectedOption" class="flex flex-col items-center">
+    <h2 class="text-xl font-semibold">{{ selectedOption }}</h2>
+
+    <div class="flex space-x-2 mt-4" style="gap: 8px;">
+      <button (click)="toggleSubOption(selectedOption, 'internet')"
+        [class.active]="selectedSubOptions[selectedOption] === 'internet'" class="btn-secondary">
+        Internet
+      </button>
+
+      <button (click)="toggleSubOption(selectedOption, 'gdrive')"
+        [class.active]="selectedSubOptions[selectedOption] === 'gdrive'" class="btn-secondary">
+        GDrive
+      </button>
+    </div>
+
+    <!-- Show Internet Links (Dynamic) -->
+    <div *ngIf="selectedSubOptions[selectedOption] === 'internet'" class="links-container">
+      <p style="margin-top: 5px;">Internet Related Links</p>
+      <div *ngFor="let link of links[selectedOption]?.internet">
+        <a [href]="link.url" target="_blank">{{ link.name }}</a>
+      </div>
+    </div>
+
+    <!-- Show Google Drive Links (Dynamic) -->
+    <div *ngIf="selectedSubOptions[selectedOption] === 'gdrive'" class="links-container">
+      <p style="margin-top: 5px;">Google Drive Related Links</p>
+      <div *ngFor="let link of links[selectedOption]?.gdrive">
+        <a [href]="link.url" target="_blank">{{ link.name }}</a>
+      </div>
+    </div>
+
+    <!-- Back Button -->
+    <!-- <button (click)="goBack()" class="btn-back mt-4">Back</button> -->
+    <!-- <button (click)="goBack()" class="btn-back mt-4">
+      <span class="icon">🔙</span> 
+    </button> -->
+    <button (click)="goBack()" class="btn-back mt-4">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+    
+    
+  </div>
+
+</div>
